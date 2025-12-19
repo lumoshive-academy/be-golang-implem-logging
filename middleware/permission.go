@@ -16,6 +16,7 @@ func (middlewareCostume *MiddlewareCostume) RequirePermission(code string) func(
 				http.Error(w, "internal error", http.StatusInternalServerError)
 				return
 			}
+
 			if !allowed {
 				http.Error(w, "forbidden", http.StatusForbidden)
 				return
